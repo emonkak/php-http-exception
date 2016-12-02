@@ -6,6 +6,12 @@ use Emonkak\HttpException\UnsupportedMediaTypeHttpException;
 
 class UnsupportedMediaTypeHttpExceptionTest extends HttpExceptionTest
 {
+    public function testStatusCode()
+    {
+        $exception = new UnsupportedMediaTypeHttpException();
+        $this->assertSame(415, $exception->getStatusCode());
+    }
+
     /**
      * @dataProvider headerDataProvider
      */

@@ -6,6 +6,12 @@ use Emonkak\HttpException\MethodNotAllowedHttpException;
 
 class MethodNotAllowedHttpExceptionTest extends HttpExceptionTest
 {
+    public function testStatusCode()
+    {
+        $exception = new MethodNotAllowedHttpException(array());
+        $this->assertSame(405, $exception->getStatusCode());
+    }
+
     public function testHeadersDefault()
     {
         $exception = new MethodNotAllowedHttpException(array('GET', 'PUT'));

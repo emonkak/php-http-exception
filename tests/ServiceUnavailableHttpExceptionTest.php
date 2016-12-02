@@ -6,6 +6,12 @@ use Emonkak\HttpException\ServiceUnavailableHttpException;
 
 class ServiceUnavailableHttpExceptionTest extends HttpExceptionTest
 {
+    public function testStatusCode()
+    {
+        $exception = new ServiceUnavailableHttpException();
+        $this->assertSame(503, $exception->getStatusCode());
+    }
+
     public function testHeadersDefaultRetryAfter()
     {
         $exception = new ServiceUnavailableHttpException(10);

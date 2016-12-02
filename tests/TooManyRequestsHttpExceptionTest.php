@@ -6,6 +6,12 @@ use Emonkak\HttpException\TooManyRequestsHttpException;
 
 class TooManyRequestsHttpExceptionTest extends HttpExceptionTest
 {
+    public function testStatusCode()
+    {
+        $exception = new TooManyRequestsHttpException();
+        $this->assertSame(429, $exception->getStatusCode());
+    }
+
     public function testHeadersDefaultRertyAfter()
     {
         $exception = new TooManyRequestsHttpException(10);

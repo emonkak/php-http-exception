@@ -6,6 +6,12 @@ use Emonkak\HttpException\UnprocessableEntityHttpException;
 
 class UnprocessableEntityHttpExceptionTest extends HttpExceptionTest
 {
+    public function testStatusCode()
+    {
+        $exception = new UnprocessableEntityHttpException();
+        $this->assertSame(422, $exception->getStatusCode());
+    }
+
     /**
      * Test that setting the headers using the setter function
      * is working as expected.
