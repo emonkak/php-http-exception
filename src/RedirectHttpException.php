@@ -33,7 +33,7 @@ class RedirectHttpException extends HttpException
             throw new \InvalidArgumentException('Invalid HTTP redirect status code: ' . $statusCode);
         }
 
-        $headers = array('Location' => $location);
+        $headers = ['Location' => $location];
 
         parent::__construct($statusCode, $message, $previous, $headers, $code);
     }

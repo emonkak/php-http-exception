@@ -22,7 +22,7 @@ class UnsupportedMediaTypeHttpExceptionTest extends HttpExceptionTest
         $this->assertSame($headers, $exception->getHeaders());
     }
 
-    protected function createException($headers = array())
+    protected function createException($headers = [])
     {
         return new UnsupportedMediaTypeHttpException();
     }

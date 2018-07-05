@@ -29,7 +29,7 @@ class RedirectHttpExceptionTest extends HttpExceptionTest
     public function testHeaders()
     {
         $exception = new RedirectHttpException('/path/to/redirect');
-        $this->assertSame(array('Location' => '/path/to/redirect'), $exception->getHeaders());
+        $this->assertSame(['Location' => '/path/to/redirect'], $exception->getHeaders());
     }
 
     /**

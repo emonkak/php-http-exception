@@ -28,7 +28,7 @@ class UnauthorizedHttpException extends HttpException
      */
     public function __construct($challenge = null, $message = null, \Exception $previous = null, $code = 0)
     {
-        $headers = array();
+        $headers = [];
         if ($challenge !== null) {
             $headers['WWW-Authenticate'] = $challenge;
         }
