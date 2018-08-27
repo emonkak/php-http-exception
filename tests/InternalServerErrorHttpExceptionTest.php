@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\InternalServerErrorHttpException;
