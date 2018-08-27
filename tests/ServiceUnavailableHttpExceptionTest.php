@@ -3,33 +3,28 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\ServiceUnavailableHttpException;
+use PHPUnit\Framework\TestCase;
 
-class ServiceUnavailableHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\ServiceUnavailableHttpException
+ */
+class ServiceUnavailableHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new ServiceUnavailableHttpException();
         $this->assertSame(503, $exception->getStatusCode());
     }
 
-    public function testHeadersDefaultRetryAfter()
+    public function testGetHeaders()
     {
         $exception = new ServiceUnavailableHttpException(10);
         $this->assertSame(['Retry-After' => 10], $exception->getHeaders());
     }
 
-    /**
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersSetter($headers)
+    public function testGetHeadersDefault()
     {
-        $exception = new ServiceUnavailableHttpException(10);
-        $exception->setHeaders($headers);
-        $this->assertSame($headers, $exception->getHeaders());
-    }
-
-    protected function createException()
-    {
-        return new ServiceUnavailableHttpException();
+        $exception = new ServiceUnavailableHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

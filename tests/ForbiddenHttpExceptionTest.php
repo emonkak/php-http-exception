@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\ForbiddenHttpException;
+use PHPUnit\Framework\TestCase;
 
-class ForbiddenHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\ForbiddenHttpException
+ */
+class ForbiddenHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new ForbiddenHttpException();
         $this->assertSame(403, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new ForbiddenHttpException();
+        $exception = new ForbiddenHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

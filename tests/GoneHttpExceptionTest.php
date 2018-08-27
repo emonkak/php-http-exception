@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\GoneHttpException;
+use PHPUnit\Framework\TestCase;
 
-class GoneHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\GoneHttpException
+ */
+class GoneHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new GoneHttpException();
         $this->assertSame(410, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new GoneHttpException();
+        $exception = new GoneHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

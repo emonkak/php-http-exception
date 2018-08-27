@@ -1,34 +1,20 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Emonkak\HttpException;
 
-/**
- * Interface for HTTP error exceptions.
- *
- * @author Kris Wallsmith <kris@symfony.com>
- */
 interface HttpExceptionInterface
 {
     /**
      * Returns the status code.
      *
-     * @return int An HTTP response status code
+     * @return An HTTP response status code
      */
-    public function getStatusCode();
+    public function getStatusCode(): int;
 
     /**
      * Returns response headers.
      *
-     * @return array Response headers
+     * @return Response headers
      */
-    public function getHeaders();
+    public function getHeaders(): array;
 }

@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\PreconditionRequiredHttpException;
+use PHPUnit\Framework\TestCase;
 
-class PreconditionRequiredHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\PreconditionRequiredHttpException
+ */
+class PreconditionRequiredHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new PreconditionRequiredHttpException();
         $this->assertSame(428, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new PreconditionRequiredHttpException();
+        $exception = new PreconditionRequiredHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

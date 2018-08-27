@@ -3,33 +3,28 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\TooManyRequestsHttpException;
+use PHPUnit\Framework\TestCase;
 
-class TooManyRequestsHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\TooManyRequestsHttpException
+ */
+class TooManyRequestsHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new TooManyRequestsHttpException();
         $this->assertSame(429, $exception->getStatusCode());
     }
 
-    public function testHeadersDefaultRertyAfter()
+    public function testGetHeaders()
     {
         $exception = new TooManyRequestsHttpException(10);
         $this->assertSame(['Retry-After' => 10], $exception->getHeaders());
     }
 
-    /**
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersSetter($headers)
+    public function testGetHeadersDefault()
     {
-        $exception = new TooManyRequestsHttpException(10);
-        $exception->setHeaders($headers);
-        $this->assertSame($headers, $exception->getHeaders());
-    }
-
-    protected function createException()
-    {
-        return new TooManyRequestsHttpException();
+        $exception = new TooManyRequestsHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

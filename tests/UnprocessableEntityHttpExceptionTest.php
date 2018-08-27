@@ -3,32 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\UnprocessableEntityHttpException;
+use PHPUnit\Framework\TestCase;
 
-class UnprocessableEntityHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\UnprocessableEntityHttpException
+ */
+class UnprocessableEntityHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new UnprocessableEntityHttpException();
         $this->assertSame(422, $exception->getStatusCode());
     }
 
-    /**
-     * Test that setting the headers using the setter function
-     * is working as expected.
-     *
-     * @param array $headers The headers to set
-     *
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersSetter($headers)
+    public function testGetHeaders()
     {
-        $exception = new UnprocessableEntityHttpException(10);
-        $exception->setHeaders($headers);
-        $this->assertSame($headers, $exception->getHeaders());
-    }
-
-    protected function createException()
-    {
-        return new UnprocessableEntityHttpException();
+        $exception = new UnprocessableEntityHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

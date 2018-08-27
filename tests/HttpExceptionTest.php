@@ -3,50 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\HttpException;
+use PHPUnit\Framework\TestCase;
 
-class HttpExceptionTest extends \PHPUnit_Framework_TestCase
+/**
+ * @covers Emonkak\HttpException\HttpException
+ */
+class HttpExceptionTest extends TestCase
 {
-    public function headerDataProvider()
+    public function testGetStatusCode()
     {
-        return [
-            [['X-Test' => 'Test']],
-            [['X-Test' => 1]],
-            [
-                [
-                    ['X-Test' => 'Test'],
-                    ['X-Test-2' => 'Test-2'],
-                ],
-            ],
-        ];
+        $exception = new HttpException(404);
+        $this->assertSame(404, $exception->getStatusCode());
     }
 
-    public function testHeadersDefault()
+    public function testGetHeaders()
     {
-        $exception = $this->createException();
+        $exception = new HttpException(404);
         $this->assertSame([], $exception->getHeaders());
-    }
-
-    /**
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersConstructor($headers)
-    {
-        $exception = new HttpException(200, null, null, $headers);
-        $this->assertSame($headers, $exception->getHeaders());
-    }
-
-    /**
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersSetter($headers)
-    {
-        $exception = $this->createException();
-        $exception->setHeaders($headers);
-        $this->assertSame($headers, $exception->getHeaders());
-    }
-
-    protected function createException()
-    {
-        return new HttpException(200);
     }
 }

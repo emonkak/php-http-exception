@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\AccessDeniedHttpException;
+use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers Emonkak\HttpException\AccessDeniedHttpException
+ */
 class AccessDeniedHttpExceptionTest extends HttpExceptionTest
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new AccessDeniedHttpException();
         $this->assertSame(403, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new AccessDeniedHttpException();
+        $exception = new AccessDeniedHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

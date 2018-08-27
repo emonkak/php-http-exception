@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\ConflictHttpException;
+use PHPUnit\Framework\TestCase;
 
-class ConflictHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\ConflictHttpException
+ */
+class ConflictHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new ConflictHttpException();
         $this->assertSame(409, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new ConflictHttpException();
+        $exception = new ConflictHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

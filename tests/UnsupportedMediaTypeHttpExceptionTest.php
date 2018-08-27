@@ -3,27 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\UnsupportedMediaTypeHttpException;
+use PHPUnit\Framework\TestCase;
 
-class UnsupportedMediaTypeHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\UnsupportedMediaTypeHttpException
+ */
+class UnsupportedMediaTypeHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new UnsupportedMediaTypeHttpException();
         $this->assertSame(415, $exception->getStatusCode());
     }
 
-    /**
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersSetter($headers)
+    public function testGetHeaders()
     {
-        $exception = new UnsupportedMediaTypeHttpException(10);
-        $exception->setHeaders($headers);
-        $this->assertSame($headers, $exception->getHeaders());
-    }
-
-    protected function createException($headers = [])
-    {
-        return new UnsupportedMediaTypeHttpException();
+        $exception = new UnsupportedMediaTypeHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

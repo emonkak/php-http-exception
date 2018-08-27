@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\NotFoundHttpException;
+use PHPUnit\Framework\TestCase;
 
-class NotFoundHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\NotFoundHttpException
+ */
+class NotFoundHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new NotFoundHttpException();
         $this->assertSame(404, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new NotFoundHttpException();
+        $exception = new NotFoundHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

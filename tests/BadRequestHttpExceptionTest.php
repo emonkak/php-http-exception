@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\BadRequestHttpException;
+use PHPUnit\Framework\TestCase;
 
-class BadRequestHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\BadRequestHttpException
+ */
+class BadRequestHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new BadRequestHttpException();
         $this->assertSame(400, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new BadRequestHttpException();
+        $exception = new BadRequestHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

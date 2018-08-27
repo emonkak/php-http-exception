@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\NotAcceptableHttpException;
+use PHPUnit\Framework\TestCase;
 
-class NotAcceptableHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\NotAcceptableHttpException
+ */
+class NotAcceptableHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new NotAcceptableHttpException();
         $this->assertSame(406, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new NotAcceptableHttpException();
+        $exception = new NotAcceptableHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

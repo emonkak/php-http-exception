@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\LengthRequiredHttpException;
+use PHPUnit\Framework\TestCase;
 
-class LengthRequiredHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\LengthRequiredHttpException
+ */
+class LengthRequiredHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new LengthRequiredHttpException();
         $this->assertSame(411, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new LengthRequiredHttpException();
+        $exception = new LengthRequiredHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

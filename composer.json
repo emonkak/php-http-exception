@@ -1,29 +1,19 @@
 {
     "name": "emonkak/http-exception",
     "type": "library",
-    "description": "An exception representing a HTTP error that splits from Symfony HttpKernel Component",
-    "keywords": [],
-    "homepage": "https://symfony.com",
+    "description": "Provides exception classes to representing HTTP errors",
     "license": "MIT",
     "authors": [
-        {
-            "name": "Fabien Potencier",
-            "email": "fabien@symfony.com"
-        },
-        {
-            "name": "Symfony Community",
-            "homepage": "https://symfony.com/contributors"
-        },
         {
             "name": "Shota Nozaki",
             "email": "emonkak@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.4",
+        "phpunit/phpunit": "~6.0",
         "satooshi/php-coveralls": "~1.0"
     },
     "autoload": {

@@ -1,33 +1,11 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Emonkak\HttpException;
 
-/**
- * AccessDeniedHttpException.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- * @author Christophe Coevoet <stof@notk.org>
- */
 class AccessDeniedHttpException extends HttpException
 {
-    /**
-     * Constructor.
-     *
-     * @param string     $message  The internal exception message
-     * @param \Exception $previous The previous exception
-     * @param int        $code     The internal exception code
-     */
-    public function __construct($message = null, \Exception $previous = null, $code = 0)
+    public function __construct(string $message = '', \Throwable $previous = null)
     {
-        parent::__construct(403, $message, $previous, [], $code);
+        parent::__construct(403, [], $message, $previous);
     }
 }

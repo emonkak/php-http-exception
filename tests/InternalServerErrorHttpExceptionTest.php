@@ -3,17 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\InternalServerErrorHttpException;
+use PHPUnit\Framework\TestCase;
 
-class InternalServerErrorHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\InternalServerErrorHttpException
+ */
+class InternalServerErrorHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new InternalServerErrorHttpException();
         $this->assertSame(500, $exception->getStatusCode());
     }
 
-    protected function createException()
+    public function testGetHeaders()
     {
-        return new InternalServerErrorHttpException();
+        $exception = new InternalServerErrorHttpException();
+        $this->assertSame([], $exception->getHeaders());
     }
 }

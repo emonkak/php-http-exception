@@ -3,28 +3,22 @@
 namespace Emonkak\HttpException\Tests;
 
 use Emonkak\HttpException\MethodNotAllowedHttpException;
+use PHPUnit\Framework\TestCase;
 
-class MethodNotAllowedHttpExceptionTest extends HttpExceptionTest
+/**
+ * @covers Emonkak\HttpException\MethodNotAllowedHttpException
+ */
+class MethodNotAllowedHttpExceptionTest extends TestCase
 {
-    public function testStatusCode()
+    public function testGetStatusCode()
     {
         $exception = new MethodNotAllowedHttpException([]);
         $this->assertSame(405, $exception->getStatusCode());
     }
 
-    public function testHeadersDefault()
+    public function testGetHeaders()
     {
         $exception = new MethodNotAllowedHttpException(['GET', 'PUT']);
         $this->assertSame(['Allow' => 'GET, PUT'], $exception->getHeaders());
-    }
-
-    /**
-     * @dataProvider headerDataProvider
-     */
-    public function testHeadersSetter($headers)
-    {
-        $exception = new MethodNotAllowedHttpException(['GET']);
-        $exception->setHeaders($headers);
-        $this->assertSame($headers, $exception->getHeaders());
     }
 }

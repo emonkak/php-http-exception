@@ -1,51 +1,28 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Emonkak\HttpException;
 
-/**
- * HttpException.
- *
- * @author Kris Wallsmith <kris@symfony.com>
- */
 class HttpException extends \RuntimeException implements HttpExceptionInterface
 {
-    private $statusCode;
+    /**
+     * @var array
+     */
     private $headers;
 
-    public function __construct($statusCode, $message = null, \Exception $previous = null, array $headers = [], $code = 0)
+    public function __construct(int $statusCode, array $headers = [], string $message = '', \Throwable $previous = null)
     {
-        $this->statusCode = $statusCode;
+        parent::__construct($message, $statusCode, $previous);
+
         $this->headers = $headers;
-
-        parent::__construct($message, $code, $previous);
     }
 
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
-        return $this->statusCode;
+        return $this->code;
     }
 
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return $this->headers;
-    }
-
-    /**
-     * Set response headers.
-     *
-     * @param array $headers Response headers
-     */
-    public function setHeaders(array $headers)
-    {
-        $this->headers = $headers;
     }
 }
