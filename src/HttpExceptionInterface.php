@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Emonkak\HttpException;
 
-interface HttpExceptionInterface
+interface HttpExceptionInterface extends \Throwable
 {
     /**
      * Returns the status code.
