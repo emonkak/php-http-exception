@@ -8,7 +8,7 @@ use Emonkak\HttpException\ServiceUnavailableHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\ServiceUnavailableHttpException
+ * @covers \Emonkak\HttpException\ServiceUnavailableHttpException
  */
 class ServiceUnavailableHttpExceptionTest extends TestCase
 {

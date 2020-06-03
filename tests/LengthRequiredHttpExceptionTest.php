@@ -8,7 +8,7 @@ use Emonkak\HttpException\LengthRequiredHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\LengthRequiredHttpException
+ * @covers \Emonkak\HttpException\LengthRequiredHttpException
  */
 class LengthRequiredHttpExceptionTest extends TestCase
 {

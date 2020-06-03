@@ -8,12 +8,12 @@ use Emonkak\HttpException\RedirectHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\RedirectHttpException
+ * @covers \Emonkak\HttpException\RedirectHttpException
  */
 class RedirectHttpExceptionTest extends TestCase
 {
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      */
     public function testGetStatusCodeThrowsException()
     {

@@ -8,7 +8,7 @@ use Emonkak\HttpException\InternalServerErrorHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\InternalServerErrorHttpException
+ * @covers \Emonkak\HttpException\InternalServerErrorHttpException
  */
 class InternalServerErrorHttpExceptionTest extends TestCase
 {

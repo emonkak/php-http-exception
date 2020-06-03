@@ -8,7 +8,7 @@ use Emonkak\HttpException\UnsupportedMediaTypeHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\UnsupportedMediaTypeHttpException
+ * @covers \Emonkak\HttpException\UnsupportedMediaTypeHttpException
  */
 class UnsupportedMediaTypeHttpExceptionTest extends TestCase
 {

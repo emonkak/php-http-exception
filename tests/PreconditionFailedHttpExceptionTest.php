@@ -8,7 +8,7 @@ use Emonkak\HttpException\PreconditionFailedHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\PreconditionFailedHttpException
+ * @covers \Emonkak\HttpException\PreconditionFailedHttpException
  */
 class PreconditionFailedHttpExceptionTest extends TestCase
 {

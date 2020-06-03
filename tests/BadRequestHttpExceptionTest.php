@@ -8,7 +8,7 @@ use Emonkak\HttpException\BadRequestHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\BadRequestHttpException
+ * @covers \Emonkak\HttpException\BadRequestHttpException
  */
 class BadRequestHttpExceptionTest extends TestCase
 {

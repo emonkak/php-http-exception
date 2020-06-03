@@ -8,7 +8,7 @@ use Emonkak\HttpException\NotFoundHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\NotFoundHttpException
+ * @covers \Emonkak\HttpException\NotFoundHttpException
  */
 class NotFoundHttpExceptionTest extends TestCase
 {

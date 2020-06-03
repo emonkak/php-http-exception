@@ -8,7 +8,7 @@ use Emonkak\HttpException\UnprocessableEntityHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\UnprocessableEntityHttpException
+ * @covers \Emonkak\HttpException\UnprocessableEntityHttpException
  */
 class UnprocessableEntityHttpExceptionTest extends TestCase
 {

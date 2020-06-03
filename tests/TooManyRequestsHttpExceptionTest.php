@@ -8,7 +8,7 @@ use Emonkak\HttpException\TooManyRequestsHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\TooManyRequestsHttpException
+ * @covers \Emonkak\HttpException\TooManyRequestsHttpException
  */
 class TooManyRequestsHttpExceptionTest extends TestCase
 {
