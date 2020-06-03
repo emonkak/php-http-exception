@@ -8,7 +8,7 @@ use Emonkak\HttpException\ConflictHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\ConflictHttpException
+ * @covers \Emonkak\HttpException\ConflictHttpException
  */
 class ConflictHttpExceptionTest extends TestCase
 {

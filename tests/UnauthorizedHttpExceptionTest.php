@@ -8,7 +8,7 @@ use Emonkak\HttpException\UnauthorizedHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\UnauthorizedHttpException
+ * @covers \Emonkak\HttpException\UnauthorizedHttpException
  */
 class UnauthorizedHttpExceptionTest extends TestCase
 {

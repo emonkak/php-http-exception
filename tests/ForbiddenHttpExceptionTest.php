@@ -8,7 +8,7 @@ use Emonkak\HttpException\ForbiddenHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\ForbiddenHttpException
+ * @covers \Emonkak\HttpException\ForbiddenHttpException
  */
 class ForbiddenHttpExceptionTest extends TestCase
 {

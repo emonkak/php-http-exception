@@ -8,7 +8,7 @@ use Emonkak\HttpException\GoneHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\GoneHttpException
+ * @covers \Emonkak\HttpException\GoneHttpException
  */
 class GoneHttpExceptionTest extends TestCase
 {

@@ -8,7 +8,7 @@ use Emonkak\HttpException\HttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\HttpException
+ * @covers \Emonkak\HttpException\HttpException
  */
 class HttpExceptionTest extends TestCase
 {

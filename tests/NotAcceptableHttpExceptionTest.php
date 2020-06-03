@@ -8,7 +8,7 @@ use Emonkak\HttpException\NotAcceptableHttpException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Emonkak\HttpException\NotAcceptableHttpException
+ * @covers \Emonkak\HttpException\NotAcceptableHttpException
  */
 class NotAcceptableHttpExceptionTest extends TestCase
 {
